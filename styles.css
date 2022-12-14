@@ -34,8 +34,8 @@ header{
 }
 
 #common-analog-container, #centi-analog-container{
-    height: 20rem;
-    width: 20rem;
+    height: 40vh;
+    width: 40vh;
     border: solid 1px var(--cinza);
     border-radius: 10px;
     box-shadow: 10px 10px 10px var(--cinza);
