@@ -1,0 +1,161 @@
+:root{
+    --branco: #fefefe;
+    --branco-escuro: #fafafa;
+    --gelo: #effeff;
+    --cinza: #dddddd;
+    --preto: #5e5e5e;
+}
+
+*{
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+body{
+    background-image: linear-gradient(to right, var(--branco), var(--branco-escuro));
+}
+
+header{
+    width: 100%;
+    text-align: center;
+    background-image: linear-gradient(to right, var(--branco), var(--gelo));
+    font-size: 3rem;
+    padding: 1rem 0;
+    border-bottom: #afafaf solid 2px;
+}
+
+#common, #centi{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 30vw;
+}
+
+#common-analog-container, #centi-analog-container{
+    height: 20rem;
+    width: 20rem;
+    border: solid 1px var(--cinza);
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px var(--cinza);
+    background-color: #fff;
+    position: relative
+}
+
+#three{
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+#six{
+    position: absolute;
+    left: 50%;
+    bottom: 1rem;
+    transform: translate(-50%, 0);
+}
+
+#nine{
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+#twelve{
+    position: absolute;
+    left: 50%;
+    top: 1rem;
+    transform: translate(-50%, 0);
+}
+
+#one-quarter{
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+#two-quarters{
+    position: absolute;
+    left: 50%;
+    bottom: 1rem;
+    transform: translate(-50%, 0);
+}
+
+#three-quarters{
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+#hundred{
+    position: absolute;
+    left: 50%;
+    top: 1rem;
+    transform: translate(-50%, 0);
+}
+
+#seconds-pointer, #centi-seconds-pointer{
+    height: 50%;
+    width: 1px;
+    background-color: rgb(248, 168, 168);
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    transform-origin: bottom;
+}
+
+#minutes-pointer, #centi-minutes-pointer{
+    height: 45%;
+    width: 2px;
+    background-color: rgb(212, 212, 250);
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    transform-origin: bottom;
+}
+
+#hours-pointer, #centi-hours-pointer{
+    height: 30%;
+    width: 3px;
+    background-color: rgb(193, 243, 193);
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, -250%);
+    transform-origin: bottom;
+    border-radius: 10px;
+}
+
+#container{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+#common-info, #centi-info{
+    width: 30vw;
+}
+
+#common-title, #centi-title{
+    font-size: 3rem;
+    text-align: center;
+}
+
+#common-clock, #centi-clock{
+    display: flex;
+    font-size: 3rem;
+    justify-content: center;
+    border: var(--cinza) 1px solid;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px var(--cinza);
+    background-image: linear-gradient(to right, var(--branco), var(--gelo));
+    padding: 0 1rem;
+}

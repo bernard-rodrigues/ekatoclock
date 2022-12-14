@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+    <title>Ekato Clock</title>
+</head>
+<body>
+    <header>Ekato Clock</header>
+    <div id="container">
+        <div id="common">
+            <div id="common-analog-container">
+                <span id="three">3</span>
+                <span id="six">6</span>
+                <span id="nine">9</span>
+                <span id="twelve">12</span>
+                <div id="seconds-pointer"></div>
+                <div id="minutes-pointer"></div>
+                <div id="hours-pointer"></div>
+            </div>
+            <div id="common-info">
+                <div id="common-title">Common Clock</div>
+                <div id="common-clock">
+                    <div id="hour">hh</div>:<div id="minute">mm</div>:<div id="second">ss</div>
+                </div>
+            </div>
+        </div>
+        <div id="centi">
+            <div id="centi-analog-container">
+                <span id="one-quarter">25</span>
+                <span id="two-quarters">50</span>
+                <span id="three-quarters">75</span>
+                <span id="hundred">100</span>
+                <div id="centi-seconds-pointer"></div>
+                <div id="centi-minutes-pointer"></div>
+                <div id="centi-hours-pointer"></div>
+            </div>
+            <div id="centi-info">
+                <div id="centi-title">Centi Clock</div>
+                <div id="centi-clock">
+                    <div id="centi-hour">ch</div>:<div id="centi-minute">cm</div>:<div id="centi-second">cs</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
