@@ -24,9 +24,17 @@ header{
     font-size: 3rem;
     padding: 1rem 0;
     border-bottom: #afafaf solid 2px;
+    margin-bottom: 3rem;
 }
 
-#common, #centi{
+#container{
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+#common, #centi, #range{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -34,7 +42,7 @@ header{
     width: 30vw;
 }
 
-#common-analog-container, #centi-analog-container{
+#common-analog-container, #centi-analog-container, #range-analog-container{
     height: 30vh;
     width: 30vh;
     border: solid 1px var(--cinza);
@@ -100,7 +108,7 @@ header{
     transform: translate(-50%, 0);
 }
 
-#seconds-pointer, #centi-seconds-pointer{
+#seconds-pointer, #centi-seconds-pointer, #range-seconds-pointer{
     position: absolute;
     height: 50%;
     width: 1px;
@@ -110,7 +118,7 @@ header{
     transform-origin: bottom;
 }
 
-#minutes-pointer, #centi-minutes-pointer{
+#minutes-pointer, #centi-minutes-pointer, #range-minutes-pointer{
     height: 45%;
     width: 2px;
     background-color: rgb(212, 212, 250);
@@ -121,7 +129,7 @@ header{
     transform-origin: bottom;
 }
 
-#hours-pointer, #centi-hours-pointer{
+#hours-pointer, #centi-hours-pointer, #range-hours-pointer{
     height: 30%;
     width: 3px;
     background-color: rgb(193, 243, 193);
@@ -133,26 +141,22 @@ header{
     border-radius: 10px;
 }
 
-#container{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-}
-
-#common-info, #centi-info{
+#common-info, #centi-info, #range-info{
     width: 20rem;
 }
 
-#common-title, #centi-title{
+#form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#common-title, #centi-title, #range-title{
     font-size: 2rem;
     text-align: center;
 }
 
-#common-clock, #centi-clock{
+#common-clock, #centi-clock, #range-clock{
     display: flex;
     font-size: 2.5rem;
     justify-content: center;
@@ -163,13 +167,28 @@ header{
     padding: 0 1rem;
 }
 
+#range-container{
+    display: flex;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+#range-container input{
+    border: 1px solid var(--cinza);
+    width: 50%;
+    height: 2rem;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    text-align: center;
+}
+
 #timeline{
-    width: 80vw;
-    height: 3rem;
+    margin-top: 4rem;
+    width: 85%;
+    height: 1.2rem;
     border: 1px solid var(--cinza);
     border-radius: 10px;
-    position: absolute;
-    bottom: 5vh;
+    position: relative;
     left: 50%;
     transform: translateX(-50%);
     background-image: linear-gradient(to right, #191970, #ffdd40, #191970);
@@ -187,22 +206,57 @@ header{
 }
 
 #percentage{
-    transform: translate(-50%, -2.5rem);
+    transform: translate(-50%, -2rem);
+    font-size: 1rem;
 }
 
 #noon{
     position: absolute;
     width: 1px;
-    height: 4rem;
+    height: 2rem;
     left: 50%;
     top: 50%;
     transform: translateY(-50%);
     background-color: var(--cinza);
 }
 
-@media only screen and (max-width: 767px){
+@media only screen and (max-width: 991px){
     :root{
         font-size: 12px;
+    }
+
+    #common-analog-container,
+    #centi-analog-container,
+    #range-analog-container{
+        height: 15rem;
+        width: 15rem;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    :root{
+        font-size: 10px;
+    }
+
+    #common-info, #centi-info, #range-info{
+        width: 15rem;
+    }
+
+    #common-clock, #centi-clock, #range-clock{
+        font-size: 1.5rem;
+    }
+
+    #common-analog-container,
+    #centi-analog-container,
+    #range-analog-container{
+        height: 18rem;
+        width: 18rem;
+    }
+
+    #container{
+        flex-direction: column;
+        gap: 4rem;
+        align-items: center;
     }
 }
 
@@ -213,12 +267,13 @@ header{
 
     #container{
         flex-direction: column;
-        gap: 3rem;
+        gap: 4rem;
         align-items: center;
     }
 
     #common-analog-container,
-    #centi-analog-container{
+    #centi-analog-container,
+    #range-analog-container{
         height: 15rem;
         width: 15rem;
     }

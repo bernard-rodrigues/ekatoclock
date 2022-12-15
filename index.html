@@ -8,8 +8,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.6.2.min.js"></script>
     
     <link rel="stylesheet" href="styles.css">
+
     <title>Ekato Clock</title>
 </head>
 <body>
@@ -49,6 +52,31 @@
                 </div>
             </div>
         </div>
+        <div id="range">
+            <div id="range-analog-container">
+                <span id="one-quarter">25</span>
+                <span id="two-quarters">50</span>
+                <span id="three-quarters">75</span>
+                <span id="hundred">100</span>
+                <div id="range-seconds-pointer"></div>
+                <div id="range-minutes-pointer"></div>
+                <div id="range-hours-pointer"></div>
+            </div>
+            <div id="range-info">
+                <div id="range-title">Range Clock</div>
+                <div id="range-clock">
+                    <div id="range-hour">0</div>:<div id="range-minute">0</div>:<div id="range-second">00</div>
+                </div>
+                <div id="form">
+                    <div id="range-container">
+                        <input id="in" placeholder="Start" name="in" type="text" />
+                        <input id="out" placeholder="Finish" name="out" type="text" />
+                    </div>
+                    <button type="button" onclick="rangeSubmit()">Submit</button>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <div id="timeline">
@@ -58,6 +86,7 @@
         </div>
     </div>
 
+    <script src="jquery.mask.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
