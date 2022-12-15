@@ -33,7 +33,6 @@ function rangeSubmit(){
     }
 
     milliseconds_per_day_of_work = milliseconds_out - milliseconds_in
-    console.log(milliseconds_per_day_of_work)
 }
 
 function updateTime() {
@@ -76,7 +75,7 @@ function updateTime() {
     document.getElementById('centi-hours-pointer').style.transform = `rotate(${centihours * 3.6}deg)`;
 
     // RANGE CLOCK
-    if(milliseconds_in != 0 && milliseconds_out != 0 && milliseconds_out > milliseconds){
+    if(milliseconds_out > milliseconds){
         const range_percentage = (milliseconds-milliseconds_in)/milliseconds_per_day_of_work
         
         const rangehours = Math.floor(range_percentage * 100) % 100
@@ -96,8 +95,7 @@ function updateTime() {
         document.getElementById('range-hours-pointer').style.transform = `rotate(${rangehours * 3.6}deg)`;
     }
 
-
-    document.getElementById('percentage').innerText = `${centihours},${Math.floor(centiminutes/10)}% do dia`
+    document.getElementById('percentage').innerText = `${centihours},${Math.floor(centiminutes/10)}% of the day`
     document.getElementById('overlayer').style.width = `${100-percentage*100}%`
 }
 

@@ -7,16 +7,18 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500&family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+
 
     <script src="https://code.jquery.com/jquery-3.6.2.min.js"></script>
     
     <link rel="stylesheet" href="styles.css">
 
-    <title>Ekato Clock</title>
+    <title>Ekato' Clock</title>
 </head>
 <body>
-    <header>Ekato Clock</header>
+    <header><h1>Ekato' Clock</h1></header>
     <div id="container">
         <div id="common">
             <div id="common-analog-container">
@@ -65,7 +67,7 @@
             <div id="range-info">
                 <div id="range-title">Range Clock</div>
                 <div id="range-clock">
-                    <div id="range-hour">0</div>:<div id="range-minute">0</div>:<div id="range-second">00</div>
+                    <div id="range-hour">0</div>:<div id="range-minute">00</div>:<div id="range-second">00</div>
                 </div>
                 <div id="form">
                     <div id="range-container">
@@ -79,11 +81,40 @@
 
     </div>
 
-    <div id="timeline">
-        <div id="noon"></div>
-        <div id="overlayer">
-            <span id="percentage"></span>
+    <div id="timeline-container">
+        <div id="timeline">
+            <div id="noon"></div>
+            <div id="overlayer">
+                <span id="percentage"></span>
+            </div>
         </div>
+    </div>
+
+    <div id="usage">
+        <h2>Usage</h2>
+        
+        <h3>Common Clock</h3>
+        <p>
+            A 24h format clock based on the traditional system,
+            ajusted according to the browser's current time.
+        </p>
+
+        <h3>Centi Clock</h3>
+        <p>
+            A clock with 100 hours (centi-hours) a day, based on a base-100 system, as most of the units 
+            in the International System of Units. In comparison with the traditional system:
+            <ul>
+                <li>A centi-hour is equivalent to 14 minutes and 24 seconds;</li>
+                <li>A centi-minute is equivalent to 8.64 seconds;</li>
+                <li>A centi-second is quivalent to 86.4 milliseconds</li>
+            </ul>
+        </p>
+
+        <h3>Range Clock</h3>
+        <p>
+            Considering as input a start time and a finish time (both in 24-hours format), 
+            this system provides a 100 hours clock showing the range's percentage achieved at current time.
+        </p>
     </div>
 
     <script src="jquery.mask.min.js"></script>

@@ -19,12 +19,17 @@ body{
 
 header{
     width: 100%;
-    text-align: center;
     background-image: linear-gradient(to right, var(--branco), var(--gelo));
     font-size: 3rem;
     padding: 1rem 0;
-    border-bottom: #afafaf solid 2px;
     margin-bottom: 3rem;
+    box-shadow: 1px 1px 20px var(--cinza);
+}
+
+header h1{
+    padding-left: 4rem;
+    font-size: 3rem;
+    font-weight: 300;
 }
 
 #container{
@@ -182,6 +187,14 @@ header{
     text-align: center;
 }
 
+#range-container input::placeholder{
+    color: var(--cinza);
+}
+
+#timeline-container{
+    display: flex;
+}
+
 #timeline{
     margin-top: 4rem;
     width: 85%;
@@ -218,6 +231,34 @@ header{
     top: 50%;
     transform: translateY(-50%);
     background-color: var(--cinza);
+}
+
+#usage{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    margin: 4rem 0;
+    border: solid 1px var(--cinza);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 10px 10px 10px var(--cinza);
+}
+
+#usage h2{
+    margin-bottom: 1rem;
+}
+
+#usage p{
+    margin-bottom: 2rem;
+}
+
+#usage p:last-child{
+    margin-bottom: 0;
+}
+
+#usage h2, #usage h3, #usage p, #usage li{
+    font-family: 'Roboto', sans-serif;
 }
 
 @media only screen and (max-width: 991px){
