@@ -10,6 +10,7 @@
     margin: 0;
     font-family: 'Orbitron', sans-serif;
     -webkit-font-smoothing: antialiased;
+    color: var(--preto);
 }
 
 body{
@@ -34,8 +35,8 @@ header{
 }
 
 #common-analog-container, #centi-analog-container{
-    height: 40vh;
-    width: 40vh;
+    height: 30vh;
+    width: 30vh;
     border: solid 1px var(--cinza);
     border-radius: 10px;
     box-shadow: 10px 10px 10px var(--cinza);
@@ -100,10 +101,10 @@ header{
 }
 
 #seconds-pointer, #centi-seconds-pointer{
+    position: absolute;
     height: 50%;
     width: 1px;
     background-color: rgb(248, 168, 168);
-    position: relative;
     left: 50%;
     transform: translateX(-50%);
     transform-origin: bottom;
@@ -113,9 +114,10 @@ header{
     height: 45%;
     width: 2px;
     background-color: rgb(212, 212, 250);
-    position: relative;
+    position: absolute;
     left: 50%;
-    transform: translate(-50%, -100%);
+    top: 5%;
+    transform: translateX(-50%);
     transform-origin: bottom;
 }
 
@@ -123,9 +125,10 @@ header{
     height: 30%;
     width: 3px;
     background-color: rgb(193, 243, 193);
-    position: relative;
+    position: absolute;
     left: 50%;
-    transform: translate(-50%, -250%);
+    top: 20%;
+    transform: translateX(-50%);
     transform-origin: bottom;
     border-radius: 10px;
 }
@@ -141,21 +144,82 @@ header{
 }
 
 #common-info, #centi-info{
-    width: 30vw;
+    width: 20rem;
 }
 
 #common-title, #centi-title{
-    font-size: 3rem;
+    font-size: 2rem;
     text-align: center;
 }
 
 #common-clock, #centi-clock{
     display: flex;
-    font-size: 3rem;
+    font-size: 2.5rem;
     justify-content: center;
     border: var(--cinza) 1px solid;
     border-radius: 10px;
     box-shadow: 10px 10px 10px var(--cinza);
     background-image: linear-gradient(to right, var(--branco), var(--gelo));
     padding: 0 1rem;
+}
+
+#timeline{
+    width: 80vw;
+    height: 3rem;
+    border: 1px solid var(--cinza);
+    border-radius: 10px;
+    position: absolute;
+    bottom: 5vh;
+    left: 50%;
+    transform: translateX(-50%);
+    background-image: linear-gradient(to right, #191970, #ffdd40, #191970);
+    display: flex;
+    justify-content: right;
+}
+
+#overlayer{
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    border-radius: 0 8px 8px 0;
+}
+
+#percentage{
+    transform: translate(-50%, -2.5rem);
+}
+
+#noon{
+    position: absolute;
+    width: 1px;
+    height: 4rem;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--cinza);
+}
+
+@media only screen and (max-width: 767px){
+    :root{
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 599px){
+    :root{
+        font-size: 9px;
+    }
+
+    #container{
+        flex-direction: column;
+        gap: 3rem;
+        align-items: center;
+    }
+
+    #common-analog-container,
+    #centi-analog-container{
+        height: 15rem;
+        width: 15rem;
+    }
 }

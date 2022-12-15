@@ -48,6 +48,13 @@ Disso, temos que:
 
 ### Conversor
 
+O relógio funciona como um medidor percentual de passagem do dia.
+O total de milissegundos de um dia pode ser calculado da seguinte forma.
+
+```python
+milissegundos_por_dia = 24*3600*1000
+```
+
 Para obter o valor do tempo atual em milissegundos, faremos:
 
 ```python
@@ -57,8 +64,9 @@ milissegundos = (horas*3600 + minutos*60 + segundos)*1000
 Nosso conversor funcionará assim:
 
 ```python
-total = (milissegundos/86.4)
-centihoras = total % 100
-centiminutos = (total/100) % 100
-centissegundos = (total/10000)
+percentual = milissegundos/milissegundos_por_dia
+
+centihoras = percentual % 100
+centiminutos = (percentual * 100) % 100
+centissegundos = (percentual * 10000) % 100
 ```
