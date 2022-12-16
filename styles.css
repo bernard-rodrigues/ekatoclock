@@ -191,6 +191,12 @@ header h1{
     color: var(--cinza);
 }
 
+#range-message{
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+}
+
 #timeline-container{
     display: flex;
 }
@@ -260,6 +266,7 @@ header h1{
 #usage h2, #usage h3, #usage p, #usage li{
     font-family: 'Roboto', sans-serif;
 }
+
 
 @media only screen and (max-width: 991px){
     :root{

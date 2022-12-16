@@ -1,4 +1,4 @@
-let milliseconds_in=0, milliseconds_out=0, milliseconds_per_day_of_work=0;
+let milliseconds_in=0, milliseconds_out=0, milliseconds_per_day_of_work=0, flag_day_pass=false;
 
 $('#in').mask('00:00', {reverse: true});
 $('#out').mask('00:00', {reverse: true});
@@ -74,8 +74,11 @@ function updateTime() {
     document.getElementById('centi-minutes-pointer').style.transform = `rotate(${centiminutes * 3.6}deg)`;
     document.getElementById('centi-hours-pointer').style.transform = `rotate(${centihours * 3.6}deg)`;
 
+    document.getElementById('percentage').innerText = `${centihours},${Math.floor(centiminutes/10)}% of the day`
+    document.getElementById('overlayer').style.width = `${100-percentage*100}%`
+
     // RANGE CLOCK
-    if(milliseconds_out > milliseconds){
+    if(milliseconds_in < milliseconds && milliseconds_out > milliseconds){
         const range_percentage = (milliseconds-milliseconds_in)/milliseconds_per_day_of_work
         
         const rangehours = Math.floor(range_percentage * 100) % 100
@@ -93,10 +96,19 @@ function updateTime() {
         document.getElementById('range-seconds-pointer').style.transform = `rotate(${((range_percentage * 1000000) % 100) * 3.6}deg)`;
         document.getElementById('range-minutes-pointer').style.transform = `rotate(${rangeminutes * 3.6}deg)`;
         document.getElementById('range-hours-pointer').style.transform = `rotate(${rangehours * 3.6}deg)`;
+        document.getElementById('range-message').innerText = ''
+    }if(milliseconds_in > milliseconds && milliseconds_out > milliseconds){
+        document.getElementById('range-message').innerText = 'Waiting for start...'
+        document.getElementById('range-hour').innerText = '0'
+        document.getElementById('range-minute').innerText = '00'
+        document.getElementById('range-second').innerText = '00'
+    }if(milliseconds_in < milliseconds && milliseconds_out < milliseconds && milliseconds_in != milliseconds_out){
+        document.getElementById('range-message').innerText = 'COMPLETE!'
+    }else{
+        document.getElementById('range-seconds-pointer').style.transform = `rotate(${((range_percentage * 1000000) % 100) * 3.6}deg)`;
+        document.getElementById('range-minutes-pointer').style.transform = `rotate(${rangeminutes * 3.6}deg)`;
+        document.getElementById('range-hours-pointer').style.transform = `rotate(${rangehours * 3.6}deg)`;
     }
-
-    document.getElementById('percentage').innerText = `${centihours},${Math.floor(centiminutes/10)}% of the day`
-    document.getElementById('overlayer').style.width = `${100-percentage*100}%`
 }
 
 window.setInterval(updateTime, 1);
